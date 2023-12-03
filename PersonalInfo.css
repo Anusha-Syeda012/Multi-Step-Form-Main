@@ -23,20 +23,6 @@
   --font-wght-regular: 400;
   --font-wght-medium: 500;
   --font-wght-bold: 700;
-
-  /* For Font Sizes */
-  --xxlarge: clamp(0.3606rem, 0.3826rem + -0.0244vw, 0.3769rem);
-  --xlarge: clamp(0.4506rem, 0.4523rem + -0.0019vw, 0.4519rem);
-  --larger: clamp(0.5425rem, 0.5352rem + 0.031vw, 0.5631rem);
-  --large: clamp(0.6513rem, 0.6328rem + 0.0789vw, 0.7038rem);
-  --xmedium: clamp(0.7813rem, 0.7465rem + 0.1484vw, 0.88rem);
-  --meduim: clamp(0.9375rem, 0.8803rem + 0.2441vw, 1.1rem);
-  --small: clamp(1.125rem, 1.037rem + 0.3756vw, 1.375rem);
-  --xsmall: clamp(1.35rem, 1.2202rem + 0.554vw, 1.7188rem);
-  --xxsmall: clamp(1.62rem, 1.4338rem + 0.7944vw, 2.1488rem);
-  --xxxsmall: clamp(1.9438rem, 1.6825rem + 1.1146vw, 2.6856rem);
-  --xxxxsmall: clamp(2.3325rem, 1.9718rem + 1.539vw, 3.3569rem);
-  --xxxxxsmall: clamp(2.7994rem, 2.3075rem + 2.0986vw, 4.1963rem);
 }
 /*Custome Default size to Border box */
 *,
@@ -51,21 +37,24 @@ body {
   padding: 0;
   font-family: var(--font-family-default);
   font-size: 1.3rem;
-  min-height: 100vh;
+  min-height: 100vw;
 
   background-image: url("./assets/images/bg-sidebar-mobile.svg");
   background-repeat: no-repeat;
   background-size: contain;
+
+  background-color: var(--Magnolia);
 }
 
 /* For mobile screens */
 
-/* Grid and head to only header */
+/* Grid for overall */
 .grid {
   display: grid;
   grid-template-columns: repeat(8, 1fr);
 }
 
+/* For header */
 .head {
   margin-top: 1rem;
   text-align: center;
@@ -79,6 +68,7 @@ body {
 
   font-size: 1.2rem;
   padding-top: 2px;
+  font-weight: var(--font-wght-regular);
 
   border: 1px solid var(--Light-gray);
   border-radius: 50%;
@@ -90,6 +80,7 @@ body {
   background-color: var(--Light-blue);
   color: var(--clr-Marine-blue);
   cursor: pointer;
+  font-weight: var(--font-wght-bold);
   border: transparent;
 }
 
@@ -100,6 +91,7 @@ body {
 
   font-size: 1.2rem;
   padding-top: 2px;
+  font-weight: var(--font-wght-regular);
 
   border: 1px solid var(--Light-gray);
   border-radius: 50%;
@@ -112,6 +104,7 @@ body {
   color: var(--clr-Marine-blue);
   cursor: pointer;
   border: transparent;
+  font-weight: var(--font-wght-bold);
 }
 
 /* Child 3 */
@@ -121,6 +114,7 @@ body {
 
   font-size: 1.2rem;
   padding-top: 2px;
+  font-weight: var(--font-wght-regular);
 
   border: 1px solid var(--Light-gray);
   border-radius: 50%;
@@ -134,6 +128,7 @@ body {
   color: var(--clr-Marine-blue);
   cursor: pointer;
   border: transparent;
+  font-weight: var(--font-wght-bold);
 }
 
 /* Child 4 */
@@ -143,6 +138,7 @@ body {
 
   font-size: 1.2rem;
   padding-top: 2px;
+  font-weight: var(--font-wght-regular);
 
   border: 1px solid var(--Light-gray);
   border-radius: 50%;
@@ -156,6 +152,93 @@ body {
   color: var(--clr-Marine-blue);
   cursor: pointer;
   border: transparent;
+  font-weight: var(--font-wght-bold);
+}
+
+/* For Main */
+.main-container {
+  margin-inline: 0.8rem;
+  margin-top: 1.3rem;
+
+  grid-column-start: 1;
+  grid-column-end: 9;
+
+  background-color: var(--White);
+  border: 1px solid transparent;
+  border-radius: 7px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+/* positioning all inner content  */
+.display-style {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 0.5rem 1rem;
+}
+
+/* ----STYLING FOR FIRST-PAGE (PERSONAL INFO) Started----------- */
+
+.main-container h1 {
+  color: var(--clr-Marine-blue);
+  font-weight: var(--font-wght-bold);
+  font-size: 2rem;
+  margin-bottom: 0;
+}
+
+.main-container p {
+  color: var(--Cool-gray);
+  font-size: 1rem;
+  width: 30ch;
+  font-weight: var(--font-wght-regular);
+}
+
+/* Styling Form */
+.details {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  color: var(--clr-Marine-blue);
+  font-size: 0.9rem;
+  font-weight: var(--font-wght-medium);
+}
+
+input {
+  border: 1px solid var(--Light-gray);
+  border-radius: 2px;
+  padding: 0.5rem;
+  padding-left: 0.9rem;
+  margin-bottom: 0.9rem;
+  font-size: 0.9rem;
+}
+
+/* ----STYLING FOR FIRST-PAGE (PERSONAL INFO)  Ended----------- */
+
+/* ---------------For Footer ---------------*/
+footer {
+  grid-column: 1/9;
+  background-color: var(--Alabaster);
+  box-sizing: border-box;
+  margin-top: 8.4rem;
+}
+/* Positioning & Styling button */
+.display-down {
+  padding-top: 1rem;
+  padding-inline: 17.2rem 1.5rem;
+}
+
+input[type="submit"] {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.btn-submit {
+  grid-column: 6/9;
+  background-color: var(--clr-Marine-blue);
+  color: var(--Alabaster);
+
+  border: 1px solid transparent;
+  border-radius: 3px;
 }
 
 /* For Desktop Screens */

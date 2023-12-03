@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- displays site properly based on user's device -->
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="PersonalInfo.css" />
     <link
       rel="icon"
       type="image/png"
@@ -14,6 +14,7 @@
     <title>Frontend Mentor | Multi-step form</title>
   </head>
   <body>
+    <!-- For Personal Info -->
     <header class="grid head">
       <h2>1</h2>
       <h2>2</h2>
@@ -21,7 +22,43 @@
       <h2>4</h2>
     </header>
 
-    <main></main>
-    <!-- Sidebar start -->
+    <main class="grid">
+      <div class="main-container display-style">
+        <h1>Personal info</h1>
+        <p>Please provide your name, email address, and phone number.</p>
+
+        <form class="details">
+          <label for="name">Name</label>
+          <input
+            type="text"
+            id="name"
+            placeholder="e.g. Stephen King"
+            autocomplete="off"
+          />
+
+          <label for="email">Email Address</label>
+          <input
+            type="email"
+            id="email"
+            placeholder="e.g. stephenking@lorem.com"
+            autocomplete="off"
+          />
+
+          <label for="number">Phone Number</label>
+          <input
+            type="text"
+            id="number"
+            placeholder="e.g. +1 234 567 890"
+            autocomplete="off"
+          />
+        </form>
+      </div>
+    </main>
+
+    <footer class="grid display-down">
+      <a href="SelectPlanMonthly.html">
+        <input type="button" value="Next Step" class="btn-submit" />
+      </a>
+    </footer>
   </body>
 </html>
