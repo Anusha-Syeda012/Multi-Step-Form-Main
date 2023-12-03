@@ -1,66 +1,163 @@
 /* Importing Ubuntu */
 @import url("https://fonts.googleapis.com/css2?family=Ubuntu");
 
-:root{
+:root {
+  /* Primary Colors */
+  --clr-Marine-blue: hsl(213, 96%, 18%);
+  --Purplish-blue: hsl(243, 100%, 62%);
+  --Pastel-blue: hsl(228, 100%, 84%);
+  --Light-blue: hsl(206, 94%, 87%);
+  --Strawberry-red: hsl(354, 84%, 57%);
 
-    /* Primary Colors */
-    --clr-Marine-blue: hsl(213, 96%, 18%);
-    --Purplish-blue: hsl(243, 100%, 62%);
-    --Pastel-blue:hsl(228, 100%, 84%);
-    --Light-blue:hsl(206, 94%, 87%);
-    --Strawberry-red: hsl(354, 84%, 57%);
+  /* Neutrals */
+  --Cool-gray: hsl(231, 11%, 63%);
+  --Light-gray: hsl(229, 24%, 87%);
+  --Magnolia: hsl(217, 100%, 97%);
+  --Alabaster: hsl(231, 100%, 99%);
+  --White: hsl(0, 0%, 100%);
 
-    /* Neutrals */
-    --Cool-gray: hsl(231, 11%, 63%);
-    --Light-gray: hsl(229, 24%, 87%);
-    --Magnolia: hsl(217, 100%, 97%);
-    --Alabaster: hsl(231, 100%, 99%);
-    --White: hsl(0, 0%, 100%);
+  /* For Font Family */
+  --font-family-default: "Ubuntu";
 
-    /* For Font Family */
-    --font-family-default:"Ubuntu";
+  /*For Font Weights */
+  --font-wght-regular: 400;
+  --font-wght-medium: 500;
+  --font-wght-bold: 700;
 
-    /*For Font Weights */
-    --font-wght-regular:400;
-    --font-wght-medium:500;
-    --font-wght-bold:700;
-
-    /* For Font Sizes */
-    --xxlarge: clamp(0.3606rem, 0.3826rem + -0.0244vw, 0.3769rem);
-    --xlarge: clamp(0.4506rem, 0.4523rem + -0.0019vw, 0.4519rem);
-    --larger: clamp(0.5425rem, 0.5352rem + 0.031vw, 0.5631rem);
-    --large: clamp(0.6513rem, 0.6328rem + 0.0789vw, 0.7038rem);
-    --xmedium: clamp(0.7813rem, 0.7465rem + 0.1484vw, 0.88rem);
-    --meduim: clamp(0.9375rem, 0.8803rem + 0.2441vw, 1.1rem);
-    --small: clamp(1.125rem, 1.037rem + 0.3756vw, 1.375rem);
-    --xsmall: clamp(1.35rem, 1.2202rem + 0.554vw, 1.7188rem);
-    --xxsmall: clamp(1.62rem, 1.4338rem + 0.7944vw, 2.1488rem);
-    --xxxsmall: clamp(1.9438rem, 1.6825rem + 1.1146vw, 2.6856rem);
-    --xxxxsmall: clamp(2.3325rem, 1.9718rem + 1.539vw, 3.3569rem);
-    --xxxxxsmall: clamp(2.7994rem, 2.3075rem + 2.0986vw, 4.1963rem);
-
+  /* For Font Sizes */
+  --xxlarge: clamp(0.3606rem, 0.3826rem + -0.0244vw, 0.3769rem);
+  --xlarge: clamp(0.4506rem, 0.4523rem + -0.0019vw, 0.4519rem);
+  --larger: clamp(0.5425rem, 0.5352rem + 0.031vw, 0.5631rem);
+  --large: clamp(0.6513rem, 0.6328rem + 0.0789vw, 0.7038rem);
+  --xmedium: clamp(0.7813rem, 0.7465rem + 0.1484vw, 0.88rem);
+  --meduim: clamp(0.9375rem, 0.8803rem + 0.2441vw, 1.1rem);
+  --small: clamp(1.125rem, 1.037rem + 0.3756vw, 1.375rem);
+  --xsmall: clamp(1.35rem, 1.2202rem + 0.554vw, 1.7188rem);
+  --xxsmall: clamp(1.62rem, 1.4338rem + 0.7944vw, 2.1488rem);
+  --xxxsmall: clamp(1.9438rem, 1.6825rem + 1.1146vw, 2.6856rem);
+  --xxxxsmall: clamp(2.3325rem, 1.9718rem + 1.539vw, 3.3569rem);
+  --xxxxxsmall: clamp(2.7994rem, 2.3075rem + 2.0986vw, 4.1963rem);
 }
 /*Custome Default size to Border box */
 *,
 *::before,
-*::after{
-    box-sizing: border-box;
+*::after {
+  box-sizing: border-box;
 }
 
 /* For Body  setting custom default values*/
-body{
-    margin: 0;
-    padding: 0;
-    font-family: var(--font-family-default);
-    font-size: 1.3rem;
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-family-default);
+  font-size: 1.3rem;
+  min-height: 100vh;
+
+  background-image: url("./assets/images/bg-sidebar-mobile.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
 }
 
 /* For mobile screens */
-@media screen and (max-width:375px) {
-    
+
+/* Grid and head to only header */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+}
+
+.head {
+  margin-top: 1rem;
+  text-align: center;
+  color: var(--White);
+}
+
+/* Child 1 */
+.head :nth-child(1) {
+  grid-column-start: 3;
+  grid-column-end: 4;
+
+  font-size: 1.2rem;
+  padding-top: 2px;
+
+  border: 1px solid var(--Light-gray);
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+}
+/* Hover on child1 */
+.head :nth-child(1):hover {
+  background-color: var(--Light-blue);
+  color: var(--clr-Marine-blue);
+  cursor: pointer;
+  border: transparent;
+}
+
+/* Child 2 */
+.head :nth-child(2) {
+  grid-column-start: 4;
+  grid-column-end: 5;
+
+  font-size: 1.2rem;
+  padding-top: 2px;
+
+  border: 1px solid var(--Light-gray);
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+}
+/* Hover on child2 */
+.head :nth-child(2):hover {
+  background-color: var(--Light-blue);
+  color: var(--clr-Marine-blue);
+  cursor: pointer;
+  border: transparent;
+}
+
+/* Child 3 */
+.head :nth-child(3) {
+  grid-column-start: 5;
+  grid-column-end: 6;
+
+  font-size: 1.2rem;
+  padding-top: 2px;
+
+  border: 1px solid var(--Light-gray);
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+}
+
+/* Hover on child3 */
+.head :nth-child(3):hover {
+  background-color: var(--Light-blue);
+  color: var(--clr-Marine-blue);
+  cursor: pointer;
+  border: transparent;
+}
+
+/* Child 4 */
+.head :nth-child(4) {
+  grid-column-start: 6;
+  grid-column-end: 7;
+
+  font-size: 1.2rem;
+  padding-top: 2px;
+
+  border: 1px solid var(--Light-gray);
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+}
+
+/* Hover on child4 */
+.head :nth-child(4):hover {
+  background-color: var(--Light-blue);
+  color: var(--clr-Marine-blue);
+  cursor: pointer;
+  border: transparent;
 }
 
 /* For Desktop Screens */
-@media screen and (min-width:1440px) {
-    
+@media screen and (min-width: 1440px) {
 }
