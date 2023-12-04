@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+    <link rel="stylesheet" href="MonthlyPlan.css" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+    <title>Frontend Mentor | Multi-step form</title>
+  </head>
+  <body>
+    <!-- For Personal Info -->
+    <header class="grid head">
+      <h2>1</h2>
+      <h2>2</h2>
+      <h2>3</h2>
+      <h2>4</h2>
+    </header>
+
+    <main class="grid">
+      <div class="main-container display-style">
+        <h1>Select your plan</h1>
+        <p>You have the option of monthly or yearly billing.</p>
+
+        <button class="selected-option">
+          <img src="./assets/images/icon-arcade.svg" alt="Arcade" />
+
+          <div>
+            Arcade
+            <span>$9/mo</span>
+          </div>
+        </button>
+
+        <button>
+          <img src="./assets/images/icon-advanced.svg" alt="Arcade" />
+
+          <div>
+            Advanced
+            <span>$12/mo</span>
+          </div>
+        </button>
+
+        <button>
+          <img src="./assets/images/icon-pro.svg" alt="Arcade" />
+
+          <div>
+            Pro
+            <span>$15/mo</span>
+          </div>
+        </button>
+
+        <div class="check-opt grid">
+          <h3>Monthly</h3>
+          <input type="checkbox" id="switch" />
+          <label for="switch">Toggle</label>
+          <h3>Yearly</h3>
+        </div>
+      </div>
+    </main>
+
+    <footer class="grid display-down">
+      <a href="index.html">
+        <input type="button" value="Go Back" class="btn-prev" />
+      </a>
+
+      <a href="SelectPlanMonthly.html">
+        <input type="button" value="Next Step" class="btn-next" />
+      </a>
+    </footer>
+  </body>
+</html>
