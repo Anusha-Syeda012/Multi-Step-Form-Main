@@ -179,12 +179,13 @@ button {
   padding-block: 0.5rem;
   padding-inline-start: 0.5rem;
   padding-inline-end: auto;
-  column-gap: 0.5rem;
+  column-gap: 1rem;
 
   font-size: 1rem;
   font-family: var(--font-family-default);
 
   margin-bottom: 0.5rem;
+  width: 100%;
 }
 .selected-option {
   border: 1px solid var(--Purplish-blue);
@@ -194,22 +195,31 @@ button img {
   height: 40px;
 }
 /* Styling for each div inside each button */
+.btn-style {
+  padding-block: 1rem;
+}
 div {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+  align-items: self-start;
 
   font-weight: var(--font-wght-bold);
   color: var(--clr-Marine-blue);
 }
 span {
   font-size: 0.75rem;
-  width: 2ch;
-
   font-weight: var(--font-wght-medium);
   color: var(--Cool-gray);
 }
-
+.level {
+  color: var(--clr-Marine-blue);
+  font-weight: var(--font-wght-bold);
+}
+.trial {
+  font-size: 0.7rem;
+  color: var(--Purplish-blue);
+}
 /* Styling for div having class .check-opt */
 .check-opt {
   font-size: 0.7rem;
@@ -291,7 +301,7 @@ footer {
   grid-column: 1/9;
   background-color: var(--Alabaster);
   box-sizing: border-box;
-  margin-top: 7.3rem;
+  margin-top: 4rem;
 }
 /* Positioning & Styling button */
 .display-down {
@@ -313,7 +323,6 @@ footer {
   border: 1px solid transparent;
   border-radius: 3px;
   padding: 0.5rem 1rem;
-  cursor: pointer;
 }
 
 /* Styling for Go Back - Button */
@@ -327,7 +336,6 @@ footer {
   font-size: 1rem;
   font-weight: var(--font-wght-medium);
   padding-left: 2rem;
-  cursor: pointer;
 }
 
 /* For Desktop Screens */

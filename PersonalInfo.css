@@ -236,6 +236,7 @@ footer {
   margin-bottom: 0;
   border: 1px solid transparent;
   border-radius: 3px;
+  cursor: pointer;
 }
 
 /* For Desktop Screens */
