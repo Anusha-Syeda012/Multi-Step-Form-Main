@@ -179,7 +179,6 @@ button {
 
   padding-block: 0.5rem;
   padding-inline-start: 0.5rem;
-  /* padding-inline-end: auto; */
   column-gap: 0.5rem;
 
   font-size: 0.8rem;
@@ -219,13 +218,7 @@ span {
 .trial {
   font-size: 0.7rem;
   color: var(--Purplish-blue);
-
-  /* justify-self: right; */
   align-self: center;
-  /* flex-direction: column; */
-  /* justify-content: end; */
-  /* justify-self: flex-end; */
-  /* padding-left: 2rem; */
 }
 /* for button 2 */
 .col1 {
@@ -344,10 +337,6 @@ span {
   left: calc(100% - 5px);
   transform: translateX(-100%);
 }
-
-/* label:active:after {
-} */
-
 /* ----STYLING FOR THIRD PAGE (PICK ADD-ONS - YEARLY)  Ended----------- */
 
 /* ---------------For Footer ---------------*/
@@ -355,7 +344,7 @@ footer {
   grid-column: 1/9;
   background-color: var(--Alabaster);
   box-sizing: border-box;
-  margin-top: 6.5rem;
+  margin-top: 12.1rem;
 }
 /* Positioning & Styling button */
 .display-down {

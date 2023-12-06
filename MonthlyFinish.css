@@ -104,13 +104,6 @@ body {
   border-radius: 50%;
   width: 30px;
   height: 30px;
-
-  /* Hover on child3 Currently */
-  background-color: var(--Light-blue);
-  color: var(--clr-Marine-blue);
-  cursor: pointer;
-  font-weight: var(--font-wght-bold);
-  border: transparent;
 }
 
 /* Child 4 */
@@ -126,6 +119,13 @@ body {
   border-radius: 50%;
   width: 30px;
   height: 30px;
+
+  /* Hover on child4 Currently */
+  background-color: var(--Light-blue);
+  color: var(--clr-Marine-blue);
+  cursor: pointer;
+  font-weight: var(--font-wght-bold);
+  border: transparent;
 }
 
 /* For Main */
@@ -150,7 +150,7 @@ body {
   padding: 0.5rem 1rem;
 }
 
-/* ----STYLING FOR THIRD-PAGE (PICK ADD-ONS) Started----------- */
+/* ----STYLING FOR lAST-PAGE (FINISH UP - Monthly & Yearly) Started----------- */
 
 .main-container h1 {
   color: var(--clr-Marine-blue);
@@ -167,195 +167,89 @@ body {
 }
 
 /* Styling Options */
+.card-container {
+  margin-inline: 0.5rem;
+  padding-inline: 0.8rem;
+  border: 1px solid transparent;
+  border-radius: 9px;
+  background-color: var(--Magnolia);
+}
 
-/* Styling for all components inside button */
-button {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-
-  border: 1px solid var(--Light-gray);
-  border-radius: 5px;
-
-  padding-block: 0.5rem;
-  padding-inline-start: 0.5rem;
-  /* padding-inline-end: auto; */
-  column-gap: 0.5rem;
-
+/* For service section */
+.service {
+  grid-column: 1/3;
+}
+.service h5 {
+  color: var(--clr-Marine-blue);
   font-size: 0.8rem;
-  font-family: var(--font-family-default);
-
-  margin-bottom: 0.5rem;
-  width: 100%;
+  width: 18ch;
+  margin-bottom: 0;
 }
-.selected-option {
-  border: 1px solid var(--Purplish-blue);
-}
-/* Styling for each div inside each button */
-.btn-style {
-  padding-block: 1rem;
-}
-div {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: self-start;
-
-  font-weight: var(--font-wght-bold);
-  color: var(--clr-Marine-blue);
-
-  padding-right: 2rem;
-}
-span {
+.service :nth-child(2) {
   font-size: 0.75rem;
-  font-weight: var(--font-wght-medium);
-  color: var(--Cool-gray);
+  margin-top: 0;
+  text-decoration: underline;
+  text-decoration-thickness: 0.1rem;
 }
-.level {
+/* For hr tag */
+.style {
+  width: 15.8rem;
+  text-align: left;
+  margin-left: 0;
+}
+.service :nth-child(4) {
+  font-size: 0.9rem;
+}
+.service :nth-child(5) {
+  font-size: 0.9rem;
+}
+.service :nth-child(6) {
+  margin-top: 2rem;
+  font-size: 0.9rem;
+}
+
+/* For charges section */
+.charges {
+  grid-column: 7/9;
+}
+
+.charges h5 {
   color: var(--clr-Marine-blue);
+  font-size: 0.8rem;
+  width: 18ch;
+}
+.charges :nth-child(1) {
+  width: 8ch;
+}
+.charges :nth-child(2) {
+  font-size: 0.8rem;
+  margin-top: 2.4rem;
+  color: var(--clr-Marine-blue);
+  font-weight: var(--font-wght-medium);
+  width: 8ch;
+}
+.charges :nth-child(3) {
+  font-size: 0.8rem;
+  color: var(--clr-Marine-blue);
+  width: 8ch;
+  font-weight: var(--font-wght-medium);
+}
+
+.charges :nth-child(4) {
+  font-size: 0.85rem;
+  margin-top: 2.5rem;
+  width: 8ch;
+  color: var(--Purplish-blue);
   font-weight: var(--font-wght-bold);
 }
-
-.trial {
-  font-size: 0.7rem;
-  color: var(--Purplish-blue);
-
-  /* justify-self: right; */
-  align-self: center;
-  /* flex-direction: column; */
-  /* justify-content: end; */
-  /* justify-self: flex-end; */
-  /* padding-left: 2rem; */
-}
-/* for button 2 */
-.col1 {
-  align-self: auto;
-  padding-left: 2rem;
-}
-/* for button 3 */
-.col2 {
-  padding-left: 0rem;
-}
-/* For button 1 */
-.col3 {
-  padding-left: 0.25rem;
-}
-/* Styling for CheckBox inside each Button */
-.regular-checkbox {
-  -webkit-appearance: none;
-  background-color: #fafafa;
-  border: 1px solid #cacece;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05),
-    inset 0px -15px 10px -12px rgba(0, 0, 0, 0.05);
-  padding: 9px;
-  border-radius: 3px;
-  display: inline-block;
-  position: relative;
-}
-.regular-checkbox:active,
-.regular-checkbox:checked:active {
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05),
-    inset 0px 1px 3px rgba(0, 0, 0, 0.1);
-}
-
-.regular-checkbox:checked {
-  background-color: var(--Purplish-blue);
-  border: 1px solid #adb8c0;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05),
-    inset 0px -15px 10px -12px rgba(0, 0, 0, 0.05),
-    inset 15px 10px -12px rgba(255, 255, 255, 0.1);
-  color: #99a1a7;
-}
-.regular-checkbox:checked:after {
-  content: "\2714";
-  font-size: 14px;
-  position: absolute;
-  top: 0px;
-  left: 3px;
-  color: var(--White);
-}
-/* Styling for div having class .check-opt For Monthly & Yearly */
-.check-opt {
-  font-size: 0.7rem;
-  justify-content: space-between;
-  align-items: center;
-
-  column-gap: 0.4rem;
-  margin: 1.5rem;
-}
-/* Positioning of all */
-
-/* For Monthly */
-.check-opt :nth-child(1) {
-  grid-column-start: 2;
-  grid-column-end: 3;
-}
-/* For Toggle Switch */
-.check-opt :nth-child(2) {
-  grid-column-start: 3;
-  grid-column-end: 4;
-}
-.check-opt :nth-child(3) {
-  grid-column-start: 4;
-  grid-column-end: 5;
-}
-
-/* For Yearly */
-.check-opt :nth-child(4) {
-  grid-column-start: 6;
-  grid-column-end: 7;
-  color: var(--Cool-gray);
-}
-/* Styling For Toggle Switch */
-.input[type="checkbox"] {
-  height: 0;
-  width: 0;
-  visibility: hidden;
-}
-
-.label {
-  cursor: pointer;
-  text-indent: -9999px;
-  width: 40px;
-  height: 20px;
-  background: var(--clr-Marine-blue);
-  display: block;
-  border-radius: 100px;
-  position: relative;
-}
-
-.label:after {
-  content: "";
-  position: absolute;
-  top: 3px;
-  left: 3px;
-  width: 13px;
-  height: 13px;
-  background: #fff;
-  border-radius: 15px;
-  transition: 0.3s;
-}
-
-.input:checked + .label {
-  background: var(--clr-Marine-blue);
-}
-
-.input:checked + .label:after {
-  left: calc(100% - 5px);
-  transform: translateX(-100%);
-}
-
-/* label:active:after {
-} */
-
-/* ----STYLING FOR THIRD PAGE (PICK ADDS ON - MONTHLY)  Ended----------- */
+/* ----STYLING FOR LAST PAGE (FINISH UP - Monthly & Yearly)  Ended----------- */
 
 /* ---------------For Footer ---------------*/
 footer {
   grid-column: 1/9;
   background-color: var(--Alabaster);
   box-sizing: border-box;
-  margin-top: 12.1rem;
+  margin-top: 14rem;
 }
 /* Positioning & Styling button */
 .display-down {
@@ -370,13 +264,13 @@ footer {
 
 /* Styling for Next Step - Button */
 .btn-next {
-  /* grid-column: 5/9; */
-  background-color: var(--clr-Marine-blue);
+  background-color: var(--Purplish-blue);
   color: var(--Alabaster);
   margin-bottom: 0;
   border: 1px solid transparent;
   border-radius: 3px;
   padding: 0.5rem 1rem;
+  font-family: var(--font-family-default);
 }
 
 /* Styling for Go Back - Button */
