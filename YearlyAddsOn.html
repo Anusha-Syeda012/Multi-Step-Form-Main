@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+    <link rel="stylesheet" href="YearlyAddsOn.css" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+    <title>Frontend Mentor | Multi-step form</title>
+  </head>
+  <body>
+    <!-- For Personal Info -->
+    <header class="grid head">
+      <h2>1</h2>
+      <h2>2</h2>
+      <h2>3</h2>
+      <h2>4</h2>
+    </header>
+
+    <main class="grid">
+      <div class="main-container display-style">
+        <h1>Pick add-ons</h1>
+        <p>Add-ons help enhance your gaming experience</p>
+
+        <!-- Button 1 -->
+
+        <button class="selected-option btn-style">
+          <input
+            type="checkbox"
+            id="on-service"
+            class="regular-checkbox"
+            checked="checked"
+          />
+          <div>
+            <label for="on-service" class="level">Online service</label>
+            <span>Access to multiplayer games</span>
+          </div>
+
+          <span class="trial col3">+$10/yr</span>
+        </button>
+
+        <!-- Button 2 -->
+        <button class="selected-option btn-style">
+          <input
+            type="checkbox"
+            id="large-store"
+            class="regular-checkbox"
+            checked="checked"
+          />
+          <div>
+            <label for="large-store" class="level">Larger storage</label>
+            <span>Extra 1TB of cloud save</span>
+          </div>
+          <span class="trial col1">+$20/yr</span>
+        </button>
+
+        <!-- Button 3 -->
+        <button class="btn-style">
+          <input type="checkbox" id="custom-profile" class="regular-checkbox" />
+          <div>
+            <label for="custom-profile" class="level"
+              >Customizable profile</label
+            >
+            <span>Custom theme on your profile</span>
+          </div>
+          <span class="trial col2">+$20/yr</span>
+        </button>
+
+        <!-- Toggle switch -->
+
+        <div class="check-opt grid">
+          <h3>Monthly</h3>
+          <input type="checkbox" id="switch" class="input" />
+          <label for="switch" class="label">Toggle</label>
+          <h3>Yearly</h3>
+        </div>
+      </div>
+    </main>
+
+    <footer class="grid display-down">
+      <a href="SelectPlanMonthly.html">
+        <input type="button" value="Go Back" class="btn-prev" />
+      </a>
+
+      <a href="MonthlyFinish.html">
+        <input type="button" value="Next Step" class="btn-next" />
+      </a>
+    </footer>
+  </body>
+</html>

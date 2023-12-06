@@ -164,7 +164,7 @@ body {
 
   background-color: var(--White);
   border: 1px solid transparent;
-  border-radius: 7px;
+  border-radius: 10px;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 

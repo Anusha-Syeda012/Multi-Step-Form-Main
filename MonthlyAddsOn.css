@@ -89,13 +89,6 @@ body {
   border-radius: 50%;
   width: 30px;
   height: 30px;
-
-  /* Hover on child2 Currently */
-  background-color: var(--Light-blue);
-  color: var(--clr-Marine-blue);
-  cursor: pointer;
-  font-weight: var(--font-wght-bold);
-  border: transparent;
 }
 
 /* Child 3 */
@@ -111,6 +104,13 @@ body {
   border-radius: 50%;
   width: 30px;
   height: 30px;
+
+  /* Hover on child3 Currently */
+  background-color: var(--Light-blue);
+  color: var(--clr-Marine-blue);
+  cursor: pointer;
+  font-weight: var(--font-wght-bold);
+  border: transparent;
 }
 
 /* Child 4 */
@@ -150,12 +150,12 @@ body {
   padding: 0.5rem 1rem;
 }
 
-/* ----STYLING FOR SECOND-PAGE (SELECT YOUR PLAN) Started----------- */
+/* ----STYLING FOR THIRD-PAGE (PICK ADD-ONS) Started----------- */
 
 .main-container h1 {
   color: var(--clr-Marine-blue);
   font-weight: var(--font-wght-bold);
-  font-size: 2rem;
+  font-size: 1.5rem;
   margin-bottom: 0;
 }
 
@@ -172,16 +172,17 @@ body {
 button {
   display: flex;
   align-items: center;
+  justify-content: flex-start;
 
   border: 1px solid var(--Light-gray);
   border-radius: 5px;
 
   padding-block: 0.5rem;
   padding-inline-start: 0.5rem;
-  padding-inline-end: auto;
-  column-gap: 1rem;
+  /* padding-inline-end: auto; */
+  column-gap: 0.5rem;
 
-  font-size: 1rem;
+  font-size: 0.8rem;
   font-family: var(--font-family-default);
 
   margin-bottom: 0.5rem;
@@ -189,10 +190,6 @@ button {
 }
 .selected-option {
   border: 1px solid var(--Purplish-blue);
-}
-button img {
-  width: 40px;
-  height: 40px;
 }
 /* Styling for each div inside each button */
 .btn-style {
@@ -206,6 +203,8 @@ div {
 
   font-weight: var(--font-wght-bold);
   color: var(--clr-Marine-blue);
+
+  padding-right: 2rem;
 }
 span {
   font-size: 0.75rem;
@@ -216,11 +215,66 @@ span {
   color: var(--clr-Marine-blue);
   font-weight: var(--font-wght-bold);
 }
+
 .trial {
   font-size: 0.7rem;
   color: var(--Purplish-blue);
+
+  /* justify-self: right; */
+  align-self: center;
+  /* flex-direction: column; */
+  /* justify-content: end; */
+  /* justify-self: flex-end; */
+  /* padding-left: 2rem; */
 }
-/* Styling for div having class .check-opt */
+/* for button 2 */
+.col1 {
+  align-self: auto;
+  padding-left: 2rem;
+}
+/* for button 3 */
+.col2 {
+  padding-left: 0rem;
+}
+/* For button 1 */
+.col3 {
+  padding-left: 0.25rem;
+}
+/* Styling for CheckBox inside each Button */
+.regular-checkbox {
+  -webkit-appearance: none;
+  background-color: #fafafa;
+  border: 1px solid #cacece;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05),
+    inset 0px -15px 10px -12px rgba(0, 0, 0, 0.05);
+  padding: 9px;
+  border-radius: 3px;
+  display: inline-block;
+  position: relative;
+}
+.regular-checkbox:active,
+.regular-checkbox:checked:active {
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05),
+    inset 0px 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.regular-checkbox:checked {
+  background-color: var(--Purplish-blue);
+  border: 1px solid #adb8c0;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05),
+    inset 0px -15px 10px -12px rgba(0, 0, 0, 0.05),
+    inset 15px 10px -12px rgba(255, 255, 255, 0.1);
+  color: #99a1a7;
+}
+.regular-checkbox:checked:after {
+  content: "\2714";
+  font-size: 14px;
+  position: absolute;
+  top: 0px;
+  left: 3px;
+  color: var(--White);
+}
+/* Styling for div having class .check-opt For Monthly & Yearly */
 .check-opt {
   font-size: 0.7rem;
   justify-content: space-between;
@@ -253,13 +307,13 @@ span {
   color: var(--Cool-gray);
 }
 /* Styling For Toggle Switch */
-input[type="checkbox"] {
+.input[type="checkbox"] {
   height: 0;
   width: 0;
   visibility: hidden;
 }
 
-label {
+.label {
   cursor: pointer;
   text-indent: -9999px;
   width: 40px;
@@ -270,7 +324,7 @@ label {
   position: relative;
 }
 
-label:after {
+.label:after {
   content: "";
   position: absolute;
   top: 3px;
@@ -282,11 +336,11 @@ label:after {
   transition: 0.3s;
 }
 
-input:checked + label {
+.input:checked + .label {
   background: var(--clr-Marine-blue);
 }
 
-input:checked + label:after {
+.input:checked + .label:after {
   left: calc(100% - 5px);
   transform: translateX(-100%);
 }
@@ -294,14 +348,14 @@ input:checked + label:after {
 /* label:active:after {
 } */
 
-/* ----STYLING FOR SECOND PAGE (SELECT YOUR PLAN - MONTHLY)  Ended----------- */
+/* ----STYLING FOR THIRD PAGE (PICK ADDS ON - MONTHLY)  Ended----------- */
 
 /* ---------------For Footer ---------------*/
 footer {
   grid-column: 1/9;
   background-color: var(--Alabaster);
   box-sizing: border-box;
-  margin-top: 4rem;
+  margin-top: 6.5rem;
 }
 /* Positioning & Styling button */
 .display-down {
