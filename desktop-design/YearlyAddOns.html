@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- displays site properly based on user's device -->
-    <link rel="stylesheet" href="./monthlyPlan.css" />
+    <link rel="stylesheet" href="./monthlyAddOns.css" />
     <link
       rel="icon"
       type="image/png"
@@ -27,7 +27,7 @@
           </div>
 
           <div class="row">
-            <h2 class="highlited">2</h2>
+            <h2>2</h2>
             <div class="sub-col">
               <h6>step 2</h6>
               <p>select plan</p>
@@ -35,7 +35,7 @@
           </div>
 
           <div class="row">
-            <h2>3</h2>
+            <h2 class="highlited">3</h2>
             <div class="sub-col">
               <h6>step 3</h6>
               <p>Add-ons</p>
@@ -54,55 +54,65 @@
 
       <summary class="text-section">
         <div class="main-container">
-          <h1>Select your plan</h1>
-          <p class="desc">You have the option of monthly or yearly biling.</p>
-          <!-- Options for subscription  -->
+          <h1>Pick add-ons</h1>
+          <p class="desc">Add-ons help enhance your gaming experience</p>
+          <!-- Options for services -->
           <div class="options">
-            <button class="selected-option">
-              <img src="../assets/images/icon-arcade.svg" alt="Arcade" />
+            <!-- Button 1 -->
 
-              <div>
-                Arcade
-                <span>$9/mo</span>
-              </div>
-            </button>
-
-            <button class="custom-padding2">
-              <img src="../assets/images/icon-advanced.svg" alt="Arcade" />
-
-              <div>
-                Advanced
-                <span>$12/mo</span>
-              </div>
-            </button>
-
-            <button class="last-btn custom-padding3">
-              <img
-                class="img-resize"
-                src="../assets/images/icon-pro.svg"
-                alt="Arcade"
+            <button class="selected-option btn-style">
+              <input
+                type="checkbox"
+                id="on-service"
+                class="regular-checkbox"
+                checked="checked"
               />
-
               <div>
-                Pro
-                <span>$15/mo</span>
+                <label for="on-service" class="level">Online service</label>
+                <span>Access to multiplayer games</span>
               </div>
-            </button>
-          </div>
 
-          <div class="check-opt">
-            <h3>Monthly</h3>
-            <input type="checkbox" id="switch" />
-            <label for="switch">Toggle</label>
-            <h3 class="on-select-light">Yearly</h3>
+              <span class="trial">+$10/yr</span>
+            </button>
+
+            <!-- Button 2 -->
+            <button class="selected-option btn-style">
+              <input
+                type="checkbox"
+                id="large-store"
+                class="regular-checkbox"
+                checked="checked"
+              />
+              <div>
+                <label for="large-store" class="level">Larger storage</label>
+                <span>Extra 1TB of cloud save</span>
+              </div>
+              <span class="trial">+$20/yr</span>
+            </button>
+
+            <!-- Button 3 -->
+            <button class="btn-style">
+              <input
+                type="checkbox"
+                id="custom-profile"
+                class="regular-checkbox"
+              />
+              <div>
+                <label for="custom-profile" class="level"
+                  >Customizable profile</label
+                >
+                <span>Custom theme on your profile</span>
+              </div>
+              <span class="trial">+$20/yr</span>
+            </button>
           </div>
         </div>
 
         <footer class="grid display-down">
-          <a href="../index.html">
+          <a href="./MonthlyPlan.html">
             <input type="button" value="Go Back" class="btn-prev" />
           </a>
-          <a href="./MonthlyAddOns.html">
+          <a href="./MonthlyFinishUp.html">
             <input type="button" value="Next Step" class="btn-submit" />
           </a>
         </footer>

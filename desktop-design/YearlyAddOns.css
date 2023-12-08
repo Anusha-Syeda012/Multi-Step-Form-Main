@@ -1,0 +1,371 @@
+/* Importing Ubuntu */
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu");
+
+:root {
+  /** Primary Colors */
+  --clr-Marine-blue: hsl(213, 96%, 18%);
+  --Purplish-blue: hsl(243, 100%, 62%);
+  --Pastel-blue: hsl(228, 100%, 84%);
+  --Light-blue: hsl(206, 94%, 87%);
+  --Strawberry-red: hsl(354, 84%, 57%);
+
+  /** Neutrals */
+  --Cool-gray: hsl(231, 11%, 63%);
+  --Light-gray: hsl(229, 24%, 87%);
+  --Magnolia: hsl(217, 100%, 97%);
+  --Alabaster: hsl(231, 100%, 99%);
+  --White: hsl(0, 0%, 100%);
+
+  /** For Font Family */
+  --font-family-default: "Ubuntu";
+
+  /*For Font Weights */
+  --font-wght-regular: 400;
+  --font-wght-medium: 500;
+  --font-wght-bold: 700;
+}
+/** Custome Default size to Border box */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/** For Body  setting custom default values*/
+
+/** For Desktop Screens */
+@media screen and (width <= 1440px) {
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: var(--font-family-default);
+    font-size: 1.3rem;
+    min-height: 100vh;
+    /* justify-items: center; */
+    /* background-color: var(--Alabaster); */
+    background-color: var(--clr-Marine-blue);
+  }
+
+  /** Main Container for accessibility */
+  main {
+    display: flex;
+    margin: 6rem 13rem;
+    /* width: 80%; */
+    border: 1px solid black;
+    border-radius: 9px;
+    background-color: var(--Alabaster);
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  }
+  /** Sub-container inside main */
+  .sub-container {
+    display: flex;
+    /* flex-direction; */
+    margin: 1rem 1rem;
+    margin-right: 0rem;
+    width: 30%;
+  }
+
+  /** Section for image */
+  .bg-img {
+    background-image: url(../assets/images/bg-sidebar-desktop.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 740px;
+    width: 380px;
+    /* background-attachment: local; */
+    max-width: 100%;
+  }
+
+  /** Section inside bg-image */
+  div {
+    display: flex;
+    flex-direction: column;
+    column-gap: 0.3rem;
+    margin-left: 1rem;
+    margin-right: 0;
+    width: 80%;
+  }
+
+  .row {
+    display: flex;
+    flex-direction: row;
+    row-gap: 2rem;
+  }
+  .sub-col {
+    display: flex;
+    flex-direction: column;
+  }
+  .sub-col :nth-child(1) {
+    margin-bottom: 0;
+  }
+  .sub-col :nth-child(2) {
+    margin-top: 0;
+  }
+
+  /** For numbers - 1,2,3,4  */
+  h2 {
+    color: var(--White);
+    font-weight: var(--font-wght-regular);
+    border: 1px solid var(--Light-gray);
+    border-radius: 50%;
+
+    width: 34px;
+    height: 34px;
+    padding: 10px;
+    font-size: 1rem;
+    text-align: center;
+    padding-top: 0.3rem;
+    /* margin-top: 2rem; */
+  }
+  .for-firstChild {
+    margin-top: 2rem;
+  }
+  /** Step-2 Highlighted  */
+  .highlited {
+    background-color: var(--Light-blue);
+    color: var(--clr-Marine-blue);
+    cursor: pointer;
+    border: transparent;
+    /* margin-top: 2rem; */
+  }
+  h6 {
+    text-transform: uppercase;
+    color: var(--Cool-gray);
+    margin-top: 0.5rem;
+    font-size: 0.7rem;
+  }
+  /** Only for h1- first child  */
+  .resize {
+    margin-top: 1.9rem;
+  }
+  p {
+    text-transform: uppercase;
+    color: var(--Alabaster);
+    font-weight: var(--font-wght-bold);
+    margin-top: 0;
+    font-size: 1rem;
+    width: 23ch;
+  }
+  /* ********************Section For text **************** */
+  .text-section {
+    background-color: var(--Magnolia);
+    border-top-right-radius: 9px;
+    border-bottom-right-radius: 9px;
+    width: 80%;
+  }
+
+  /** Section for styling and positioning summary */
+
+  /** positioning all inner content  */
+  .main-container {
+    /* margin-inline: 4rem; */
+    margin-top: 1.12rem;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 0.5rem 1rem;
+    width: 95%;
+  }
+  h1 {
+    color: var(--clr-Marine-blue);
+    font-weight: var(--font-wght-bold);
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+  }
+  .desc {
+    color: var(--Cool-gray);
+    font-weight: var(--font-wght-medium);
+    text-transform: none;
+    width: 50ch;
+    padding-top: 0rem;
+    font-size: 1.1rem;
+  }
+
+  /** Styling for all components inside button */
+  .options {
+    row-gap: 0.5rem;
+    margin-top: 1.3rem;
+  }
+  button {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+    border: 1px solid var(--Light-gray);
+    border-radius: 5px;
+
+    padding-block: 0.5rem;
+    padding-inline-start: 0.5rem;
+    /* padding-inline-end: auto; */
+    column-gap: 0.5rem;
+
+    font-size: 0.8rem;
+    font-family: var(--font-family-default);
+
+    margin-bottom: 0.5rem;
+    width: 100%;
+  }
+  .selected-option {
+    border: 1px solid var(--Purplish-blue);
+  }
+  /* Styling for each div inside each button */
+  .btn-style {
+    padding-block: 1rem;
+  }
+  div {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: self-start;
+
+    font-weight: var(--font-wght-bold);
+    color: var(--clr-Marine-blue);
+
+    padding-right: 2rem;
+  }
+  span {
+    font-size: 0.75rem;
+    font-weight: var(--font-wght-medium);
+    color: var(--Cool-gray);
+  }
+  .level {
+    color: var(--clr-Marine-blue);
+    font-weight: var(--font-wght-bold);
+  }
+
+  .trial {
+    font-size: 0.7rem;
+    color: var(--Purplish-blue);
+    align-self: center;
+  }
+  /* Styling for CheckBox inside each Button */
+  .regular-checkbox {
+    -webkit-appearance: none;
+    background-color: #fafafa;
+    border: 1px solid #cacece;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05),
+      inset 0px -15px 10px -12px rgba(0, 0, 0, 0.05);
+    padding: 9px;
+    border-radius: 3px;
+    display: inline-block;
+    position: relative;
+  }
+  .regular-checkbox:active,
+  .regular-checkbox:checked:active {
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05),
+      inset 0px 1px 3px rgba(0, 0, 0, 0.1);
+  }
+
+  .regular-checkbox:checked {
+    background-color: var(--Purplish-blue);
+    border: 1px solid #adb8c0;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05),
+      inset 0px -15px 10px -12px rgba(0, 0, 0, 0.05),
+      inset 15px 10px -12px rgba(255, 255, 255, 0.1);
+    color: #99a1a7;
+  }
+  .regular-checkbox:checked:after {
+    content: "\2714";
+    font-size: 14px;
+    position: absolute;
+    top: 0px;
+    left: 3px;
+    color: var(--White);
+  }
+  /** Styling for div having class .check-opt */
+  .check-opt {
+    display: flex;
+    font-size: 0.7rem;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    column-gap: 0.9rem;
+  }
+  /** Positioning of all */
+  .on-select-light {
+    color: var(--Cool-gray);
+  }
+  /** Styling For Toggle Switch */
+  .input[type="checkbox"] {
+    height: 0;
+    width: 0;
+    visibility: hidden;
+  }
+
+  .label {
+    cursor: pointer;
+    text-indent: -9999px;
+    width: 40px;
+    height: 20px;
+    background: var(--clr-Marine-blue);
+    display: block;
+    border-radius: 100px;
+    position: relative;
+    margin-inline-end: 0.9rem;
+  }
+
+  .label:after {
+    content: "";
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: 13px;
+    height: 13px;
+    background: #fff;
+    border-radius: 15px;
+    transition: 0.3s;
+  }
+
+  .input:checked + .label {
+    background: var(--clr-Marine-blue);
+  }
+
+  .input:checked + .label:after {
+    left: calc(100% - 5px);
+    transform: translateX(-100%);
+  }
+
+  /** ----STYLING FOR SECOND-PAGE (Select plan)  Ended----------- */
+
+  /** ---------------For Footer ---------------*/
+  footer {
+    background-color: var(--Alabaster);
+    box-sizing: border-box;
+    margin-top: 15rem;
+    margin-right: 7rem;
+  }
+  /** Positioning & Styling button */
+  .display-down {
+    padding-block: 1rem;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-right: 1rem;
+  }
+  .btn-submit {
+    /* grid-column: 5/9; */
+    background-color: var(--clr-Marine-blue);
+    color: var(--Alabaster);
+    padding: 0.8rem 1.7rem;
+    /* margin-bottom: 0; */
+    border: 1px solid transparent;
+    border-radius: 7px;
+    cursor: pointer;
+  }
+
+  /** Styling for Go Back - Button */
+  .btn-prev {
+    background-color: transparent;
+    color: var(--Cool-gray);
+    /* margin-bottom: 0; */
+    border: 1px solid transparent;
+    border-radius: 3px;
+    font-family: var(--font-family-default);
+    font-size: 1rem;
+    font-weight: var(--font-wght-medium);
+    padding-right: 16rem;
+    cursor: pointer;
+  }
+}
