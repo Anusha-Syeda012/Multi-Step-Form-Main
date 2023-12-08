@@ -1,0 +1,226 @@
+/* Importing Ubuntu */
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu");
+
+:root {
+  /** Primary Colors */
+  --clr-Marine-blue: hsl(213, 96%, 18%);
+  --Purplish-blue: hsl(243, 100%, 62%);
+  --Pastel-blue: hsl(228, 100%, 84%);
+  --Light-blue: hsl(206, 94%, 87%);
+  --Strawberry-red: hsl(354, 84%, 57%);
+
+  /** Neutrals */
+  --Cool-gray: hsl(231, 11%, 63%);
+  --Light-gray: hsl(229, 24%, 87%);
+  --Magnolia: hsl(217, 100%, 97%);
+  --Alabaster: hsl(231, 100%, 99%);
+  --White: hsl(0, 0%, 100%);
+
+  /** For Font Family */
+  --font-family-default: "Ubuntu";
+
+  /*For Font Weights */
+  --font-wght-regular: 400;
+  --font-wght-medium: 500;
+  --font-wght-bold: 700;
+}
+/** Custome Default size to Border box */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/** For Body  setting custom default values*/
+
+/** For Desktop Screens */
+@media screen and (max-width: 1440px) {
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: var(--font-family-default);
+    font-size: 1.3rem;
+    min-height: 100vh;
+    /* justify-items: center; */
+    /* background-color: var(--Alabaster); */
+    background-color: var(--clr-Marine-blue);
+  }
+
+  /** Main Container for accessibility */
+  main {
+    display: flex;
+    margin: 6rem 13rem;
+    /* width: 80%; */
+    border: 1px solid black;
+    border-radius: 9px;
+    background-color: var(--Alabaster);
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  }
+  /** Sub-container inside main */
+  .sub-container {
+    display: flex;
+    /* flex-direction; */
+    margin: 1rem 1rem;
+    margin-right: 0rem;
+    width: 30%;
+  }
+
+  /** Section for image */
+  .bg-img {
+    background-image: url(../assets/images/bg-sidebar-desktop.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 740px;
+    width: 450px;
+    /* background-attachment: local; */
+    max-width: 100%;
+  }
+
+  /** Section inside bg-image */
+  div {
+    display: flex;
+    flex-direction: column;
+    column-gap: 0.3rem;
+    margin-left: 1rem;
+    margin-right: 0;
+    width: 80%;
+  }
+
+  .row {
+    display: flex;
+    flex-direction: row;
+    row-gap: 2rem;
+  }
+  .sub-col {
+    display: flex;
+    flex-direction: column;
+  }
+  .sub-col :nth-child(1) {
+    margin-bottom: 0;
+  }
+  .sub-col :nth-child(2) {
+    margin-top: 0;
+  }
+
+  /** For numbers - 1,2,3,4  */
+  h2 {
+    color: var(--White);
+    font-weight: var(--font-wght-regular);
+    border: 1px solid var(--Light-gray);
+    border-radius: 50%;
+
+    width: 30px;
+    height: 30px;
+    font-size: 1rem;
+    text-align: center;
+    padding-top: 0.2rem;
+    /* margin-top: 2rem; */
+  }
+  /** Step-1 Highlighted  */
+  .highlited {
+    background-color: var(--Light-blue);
+    color: var(--clr-Marine-blue);
+    cursor: pointer;
+    border: transparent;
+    margin-top: 2rem;
+  }
+  h6 {
+    text-transform: uppercase;
+    color: var(--Cool-gray);
+    margin-top: 0.5rem;
+    font-size: 0.7rem;
+  }
+  /** Only for h1- first child  */
+  .resize {
+    margin-top: 1.9rem;
+  }
+  p {
+    text-transform: uppercase;
+    color: var(--Alabaster);
+    font-weight: var(--font-wght-bold);
+    margin-top: 0;
+    font-size: 1rem;
+  }
+  /* ********************Section For text **************** */
+  .text-section {
+    background-color: var(--White);
+    border-top-right-radius: 9px;
+    border-bottom-right-radius: 9px;
+    width: 80%;
+  }
+
+  /** Section for styling and positioning summary */
+
+  /** positioning all inner content  */
+  .main-container {
+    /* margin-inline: 4rem; */
+    margin-top: 1.12rem;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 0.5rem 1rem;
+  }
+  h1 {
+    color: var(--clr-Marine-blue);
+    font-weight: var(--font-wght-bold);
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+  }
+  .desc {
+    color: var(--Cool-gray);
+    font-weight: var(--font-wght-medium);
+    text-transform: none;
+    width: 50ch;
+    padding-top: 0rem;
+    font-size: 1.1rem;
+  }
+
+  .details {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    color: var(--clr-Marine-blue);
+    font-size: 0.9rem;
+    row-gap: 0.1rem;
+    margin-top: 2rem;
+    font-weight: var(--font-wght-medium);
+  }
+
+  input {
+    border: 1px solid var(--Light-gray);
+    border-radius: 2px;
+    padding: 0.5rem;
+    padding-left: 0.9rem;
+    margin-bottom: 1.7rem;
+    font-size: 0.9rem;
+  }
+
+  /* ----STYLING FOR FIRST-PAGE (PERSONAL INFO)  Ended----------- */
+
+  /* ---------------For Footer ---------------*/
+  footer {
+    background-color: var(--Alabaster);
+    box-sizing: border-box;
+    margin-top: 15rem;
+    margin-right: 7rem;
+  }
+  /* Positioning & Styling button */
+  .display-down {
+    padding-block: 1rem;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-right: 1rem;
+  }
+  .btn-submit {
+    /* grid-column: 5/9; */
+    background-color: var(--clr-Marine-blue);
+    color: var(--Alabaster);
+    padding: 0.8rem 1.7rem;
+    /* margin-bottom: 0; */
+    border: 1px solid transparent;
+    border-radius: 7px;
+    cursor: pointer;
+  }
+}

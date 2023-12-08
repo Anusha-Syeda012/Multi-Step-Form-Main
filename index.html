@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+    <link rel="stylesheet" href="/desktop-design/personalinfo.css" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+    <title>Frontend Mentor | Multi-step form</title>
+  </head>
+  <body>
+    <!-- For Personal Info -->
+    <main>
+      <div class="sub-container bg-img">
+        <div>
+          <div class="row">
+            <h2 class="highlited">1</h2>
+            <div class="sub-col">
+              <h6 class="resize">step 1</h6>
+              <p>your info</p>
+            </div>
+          </div>
+
+          <div class="row">
+            <h2>2</h2>
+            <div class="sub-col">
+              <h6>step 2</h6>
+              <p>select plan</p>
+            </div>
+          </div>
+
+          <div class="row">
+            <h2>3</h2>
+            <div class="sub-col">
+              <h6>step 3</h6>
+              <p>Add-ons</p>
+            </div>
+          </div>
+
+          <div class="row">
+            <h2>4</h2>
+            <div class="sub-col">
+              <h6>step 4</h6>
+              <p>summary</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <summary class="text-section">
+        <div class="main-container">
+          <h1>Personal info</h1>
+          <p class="desc">
+            Please provide your name, email address, and phone number.
+          </p>
+
+          <!-- form details -->
+          <form class="details">
+            <label for="name">Name</label>
+            <input
+              type="text"
+              id="name"
+              placeholder="e.g. Stephen King"
+              autocomplete="off"
+            />
+
+            <label for="email">Email Address</label>
+            <input
+              type="email"
+              id="email"
+              placeholder="e.g. stephenking@lorem.com"
+              autocomplete="off"
+            />
+
+            <label for="number">Phone Number</label>
+            <input
+              type="text"
+              id="number"
+              placeholder="e.g. +1 234 567 890"
+              autocomplete="off"
+            />
+          </form>
+        </div>
+        <footer class="grid display-down">
+          <a href="/MonthlyPlan.html">
+            <input type="button" value="Next Step" class="btn-submit" />
+          </a>
+        </footer>
+      </summary>
+    </main>
+  </body>
+</html>
