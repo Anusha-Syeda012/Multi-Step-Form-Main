@@ -183,149 +183,76 @@
   }
 
   /** Styling for all components inside button */
-  .options {
-    row-gap: 0.5rem;
-    margin-top: 1.3rem;
-  }
-  button {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-
-    border: 1px solid var(--Light-gray);
-    border-radius: 5px;
-
-    padding-block: 0.5rem;
-    padding-inline-start: 0.5rem;
-    /* padding-inline-end: auto; */
-    column-gap: 0.5rem;
-
-    font-size: 0.8rem;
-    font-family: var(--font-family-default);
-
-    margin-bottom: 0.5rem;
-    width: 100%;
-  }
-  .selected-option {
-    border: 1px solid var(--Purplish-blue);
-  }
-  /* Styling for each div inside each button */
-  .btn-style {
-    padding-block: 1rem;
-  }
-  div {
+  .receipt {
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
-    align-items: self-start;
 
-    font-weight: var(--font-wght-bold);
-    color: var(--clr-Marine-blue);
-
-    padding-right: 2rem;
+    /* font-size: 3rem; */
   }
-  span {
-    font-size: 0.75rem;
-    font-weight: var(--font-wght-medium);
-    color: var(--Cool-gray);
-  }
-  .level {
-    color: var(--clr-Marine-blue);
-    font-weight: var(--font-wght-bold);
-  }
-
-  .trial {
-    font-size: 0.7rem;
-    color: var(--Purplish-blue);
-    align-self: center;
-  }
-  /* Styling for CheckBox inside each Button */
-  .regular-checkbox {
-    -webkit-appearance: none;
-    background-color: #fafafa;
-    border: 1px solid #cacece;
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05),
-      inset 0px -15px 10px -12px rgba(0, 0, 0, 0.05);
-    padding: 9px;
-    border-radius: 3px;
-    display: inline-block;
-    position: relative;
-  }
-  .regular-checkbox:active,
-  .regular-checkbox:checked:active {
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05),
-      inset 0px 1px 3px rgba(0, 0, 0, 0.1);
-  }
-
-  .regular-checkbox:checked {
-    background-color: var(--Purplish-blue);
-    border: 1px solid #adb8c0;
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05),
-      inset 0px -15px 10px -12px rgba(0, 0, 0, 0.05),
-      inset 15px 10px -12px rgba(255, 255, 255, 0.1);
-    color: #99a1a7;
-  }
-  .regular-checkbox:checked:after {
-    content: "\2714";
-    font-size: 14px;
-    position: absolute;
-    top: 0px;
-    left: 3px;
-    color: var(--White);
-  }
-  /** Styling for div having class .check-opt */
-  .check-opt {
+  .inner-list {
     display: flex;
-    font-size: 0.7rem;
     flex-direction: row;
-    justify-content: center;
-    align-items: center;
-
-    column-gap: 0.9rem;
+    /* font-size: 2rem; */
   }
-  /** Positioning of all */
-  .on-select-light {
+  .inner-list h5 {
+    color: var(--clr-Marine-blue);
+    font-size: 0.8rem;
+    width: 18ch;
+    margin-bottom: 0;
+  }
+  .chng {
+    font-size: 0.75rem;
+    margin-top: 0;
+    text-decoration: underline;
+    text-decoration-thickness: 0.1rem;
     color: var(--Cool-gray);
+    text-transform: none;
   }
-  /** Styling For Toggle Switch */
-  .input[type="checkbox"] {
-    height: 0;
-    width: 0;
-    visibility: hidden;
+  .inner-list p {
+    margin-top: 0rem;
+  }
+  .service-name {
+    flex-direction: column;
+  }
+  .chrge-style {
+    flex-direction: row;
+    column-gap: 9rem;
+  }
+  /* For hr tag */
+  .style {
+    background-color: #b7d0e2;
+    padding-right: 25rem;
+    /* padding-left: 5rem; */
+    flex-direction: column;
+  }
+  .card-container {
+    margin-inline: 0.5rem;
+    padding-inline: 0.8rem;
+    border: 1px solid transparent;
+    border-radius: 9px;
+    background-color: var(--Magnolia);
+  }
+  .custome-style {
+    font-size: 0.75rem;
+    color: var(--Cool-gray);
+    font-weight: var(--font-wght-medium);
+    text-transform: none;
+    padding-left: 0.5rem;
+    width: 43ch;
+  }
+  .service-chrges {
+    color: var(--clr-Marine-blue);
+    font-weight: var(--font-wght-medium);
+  }
+  .service-chrges2 {
+    color: var(--Purplish-blue);
+    font-weight: var(--font-wght-bold);
+  }
+  .mrgn {
+    margin-top: 2rem;
   }
 
-  .label {
-    cursor: pointer;
-    text-indent: -9999px;
-    width: 40px;
-    height: 20px;
-    background: var(--clr-Marine-blue);
-    display: block;
-    border-radius: 100px;
-    position: relative;
-    margin-inline-end: 0.9rem;
-  }
-
-  .label:after {
-    content: "";
-    position: absolute;
-    top: 3px;
-    left: 3px;
-    width: 13px;
-    height: 13px;
-    background: #fff;
-    border-radius: 15px;
-    transition: 0.3s;
-  }
-
-  .input:checked + .label {
-    background: var(--clr-Marine-blue);
-  }
-
-  .input:checked + .label:after {
-    left: calc(100% - 5px);
-    transform: translateX(-100%);
-  }
+  /* ----STYLING FOR LAST PAGE (FINISH UP - Monthly & Yearly)  Ended----------- */
 
   /** ----STYLING FOR SECOND-PAGE (Select plan)  Ended----------- */
 
@@ -333,38 +260,42 @@
   footer {
     background-color: var(--Alabaster);
     box-sizing: border-box;
-    margin-top: 10rem;
+    margin-top: 15rem;
     margin-right: 7rem;
   }
-  /** Positioning & Styling button */
+  /* Positioning & Styling button */
   .display-down {
     padding-block: 1rem;
+
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
     align-items: center;
-    padding-right: 1rem;
-  }
-  .btn-submit {
-    /* grid-column: 5/9; */
-    background-color: var(--clr-Marine-blue);
-    color: var(--Alabaster);
-    padding: 0.8rem 1rem;
-    /* margin-bottom: 0; */
-    border: 1px solid transparent;
-    border-radius: 7px;
-    cursor: pointer;
+    padding-right: 2rem;
   }
 
-  /** Styling for Go Back - Button */
+  /* Styling for Next Step - Button */
+  .btn-next {
+    background-color: var(--Purplish-blue);
+    color: var(--Alabaster);
+    margin-bottom: 0;
+    border: 1px solid transparent;
+    border-radius: 3px;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    font-family: var(--font-family-default);
+  }
+
+  /* Styling for Go Back - Button */
   .btn-prev {
     background-color: transparent;
     color: var(--Cool-gray);
-    /* margin-bottom: 0; */
+    margin-bottom: 0;
     border: 1px solid transparent;
     border-radius: 3px;
     font-family: var(--font-family-default);
     font-size: 1rem;
     font-weight: var(--font-wght-medium);
+    padding-left: 2rem;
     padding-right: 11rem;
     cursor: pointer;
   }

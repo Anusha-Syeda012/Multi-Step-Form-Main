@@ -42,16 +42,16 @@
     font-size: 1.3rem;
     min-height: 100vh;
     /* justify-items: center; */
-    /* background-color: var(--Alabaster); */
-    background-color: var(--clr-Marine-blue);
+    background-color: var(--Alabaster);
+    /* background-color: var(--clr-Marine-blue); */
   }
 
   /** Main Container for accessibility */
   main {
     display: flex;
-    margin: 6rem 13rem;
-    /* width: 80%; */
-    border: 1px solid black;
+    margin: 1rem 13rem;
+    width: 65%;
+    border: 1px solid transparent;
     border-radius: 9px;
     background-color: var(--Alabaster);
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
@@ -70,7 +70,7 @@
     background-image: url(../assets/images/bg-sidebar-desktop.svg);
     background-repeat: no-repeat;
     background-size: cover;
-    height: 740px;
+    height: 670px;
     width: 450px;
     /* background-attachment: local; */
     max-width: 100%;
@@ -340,7 +340,7 @@
   footer {
     background-color: var(--Alabaster);
     box-sizing: border-box;
-    margin-top: 15rem;
+    margin-top: 10rem;
     margin-right: 7rem;
   }
   /** Positioning & Styling button */
@@ -355,7 +355,7 @@
     /* grid-column: 5/9; */
     background-color: var(--clr-Marine-blue);
     color: var(--Alabaster);
-    padding: 0.8rem 1.7rem;
+    padding: 0.8rem 1rem;
     /* margin-bottom: 0; */
     border: 1px solid transparent;
     border-radius: 7px;
@@ -372,7 +372,7 @@
     font-family: var(--font-family-default);
     font-size: 1rem;
     font-weight: var(--font-wght-medium);
-    padding-right: 16rem;
+    padding-right: 11rem;
     cursor: pointer;
   }
 }

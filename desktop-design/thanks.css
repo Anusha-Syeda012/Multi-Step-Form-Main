@@ -50,7 +50,7 @@
   main {
     display: flex;
     margin: 1rem 13rem;
-    width: 65%;
+    width: 70%;
     border: 1px solid transparent;
     border-radius: 9px;
     background-color: var(--Alabaster);
@@ -70,8 +70,8 @@
     background-image: url(../assets/images/bg-sidebar-desktop.svg);
     background-repeat: no-repeat;
     background-size: cover;
-    height: 650px;
-    width: 590px;
+    height: 670px;
+    width: 450px;
     /* background-attachment: local; */
     max-width: 100%;
   }
@@ -116,13 +116,16 @@
     padding-top: 0.2rem;
     /* margin-top: 2rem; */
   }
-  /** Step-1 Highlighted  */
+  .for-firstChild {
+    margin-top: 2rem;
+  }
+  /** Step-2 Highlighted  */
   .highlited {
     background-color: var(--Light-blue);
     color: var(--clr-Marine-blue);
     cursor: pointer;
     border: transparent;
-    margin-top: 2rem;
+    /* margin-top: 2rem; */
   }
   h6 {
     text-transform: uppercase;
@@ -143,7 +146,7 @@
   }
   /* ********************Section For text **************** */
   .text-section {
-    background-color: var(--White);
+    background-color: var(--Magnolia);
     border-top-right-radius: 9px;
     border-bottom-right-radius: 9px;
     width: 80%;
@@ -154,17 +157,18 @@
   /** positioning all inner content  */
   .main-container {
     /* margin-inline: 4rem; */
-    margin-top: 1.12rem;
-
+    margin-top: 15rem;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
-    padding: 0.5rem 1rem;
+    justify-content: center;
+    align-items: center;
+    width: 95%;
+    padding-inline: 2rem 2rem;
   }
   h1 {
     color: var(--clr-Marine-blue);
     font-weight: var(--font-wght-bold);
-    font-size: 2.5rem;
+    font-size: 2rem;
     margin-bottom: 0.5rem;
   }
   .desc {
@@ -174,53 +178,12 @@
     width: 50ch;
     padding-top: 0rem;
     font-size: 1.1rem;
+    text-align: center;
   }
 
-  .details {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    color: var(--clr-Marine-blue);
-    font-size: 0.9rem;
-    row-gap: 0.1rem;
-    margin-top: 2rem;
-    font-weight: var(--font-wght-medium);
+  img {
+    width: 15%;
+    height: 15%;
   }
-
-  input {
-    border: 1px solid var(--Light-gray);
-    border-radius: 2px;
-    padding: 0.5rem;
-    padding-left: 0.9rem;
-    margin-bottom: 1.7rem;
-    font-size: 0.9rem;
-  }
-
-  /* ----STYLING FOR FIRST-PAGE (PERSONAL INFO)  Ended----------- */
-
-  /* ---------------For Footer ---------------*/
-  footer {
-    background-color: var(--Alabaster);
-    box-sizing: border-box;
-    margin-top: 10rem;
-    margin-right: 7rem;
-  }
-  /* Positioning & Styling button */
-  .display-down {
-    padding-block: 1rem;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    padding-right: 1rem;
-  }
-  .btn-submit {
-    /* grid-column: 5/9; */
-    background-color: var(--clr-Marine-blue);
-    color: var(--Alabaster);
-    padding: 0.8rem 1rem;
-    /* margin-bottom: 0; */
-    border: 1px solid transparent;
-    border-radius: 7px;
-    cursor: pointer;
-  }
+  /** ----STYLING FOR LAST-PAGE Ended----------- */
 }
