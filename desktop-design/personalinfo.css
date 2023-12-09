@@ -41,6 +41,7 @@
     font-family: var(--font-family-default);
     font-size: 1.3rem;
     min-height: 100vh;
+    caret-color: var(--Strawberry-red);
     /* justify-items: center; */
     background-color: var(--Alabaster);
     /* background-color: var(--clr-Marine-blue); */

@@ -12,6 +12,38 @@
       href="../assets/images/favicon-32x32.png"
     />
     <title>Frontend Mentor | Multi-step form</title>
+    <script>
+      function toggle() {
+        const toggleSwitch = document.getElementById("switch");
+        if (toggleSwitch.checked) {
+          window.location.href = "./MonthlyPlan.html";
+        }
+      }
+      function handleClick(id) {
+        let btn = document.getElementById(id);
+        let text = btn.getAttribute("id");
+        console.log(text);
+        if (text == "btn2") {
+          if (btn.classList.contains("selected-option")) {
+            btn.classList.remove("selected-option"); // Remove the class if it's already present
+          } else {
+            btn.classList.add("selected-option"); // Add the class if it's not present
+          }
+        } else if (text == "btn3") {
+          if (btn.classList.contains("selected-option")) {
+            btn.classList.remove("selected-option"); // Remove the class if it's already present
+          } else {
+            btn.classList.add("selected-option"); // Add the class if it's not present
+          }
+        } else {
+          if (btn.classList.contains("selected-option")) {
+            btn.classList.remove("selected-option"); // Remove the class if it's already present
+          } else {
+            btn.classList.add("selected-option"); // Add the class if it's not present
+          }
+        }
+      }
+    </script>
   </head>
   <body>
     <!-- For Personal Info -->
@@ -58,7 +90,11 @@
           <p class="desc">You have the option of monthly or yearly biling.</p>
           <!-- Options for subscription  -->
           <div class="options">
-            <button class="selected-option custom-padding1">
+            <button
+              class="selected-option custom-padding1"
+              id="btn1"
+              onclick="handleClick(this.id)"
+            >
               <img src="../assets/images/icon-arcade.svg" alt="Arcade" />
 
               <div>
@@ -68,7 +104,11 @@
               </div>
             </button>
 
-            <button class="custom-padding2">
+            <button
+              class="custom-padding2"
+              id="btn2"
+              onclick="handleClick(this.id)"
+            >
               <img src="../assets/images/icon-advanced.svg" alt="Arcade" />
 
               <div>
@@ -78,7 +118,11 @@
               </div>
             </button>
 
-            <button class="last-btn custom-padding3">
+            <button
+              class="last-btn custom-padding3"
+              id="btn3"
+              onclick="handleClick(this.id)"
+            >
               <img
                 class="img-resize"
                 src="../assets/images/icon-pro.svg"
@@ -95,7 +139,7 @@
 
           <div class="check-opt">
             <h3>Monthly</h3>
-            <input type="checkbox" id="switch" />
+            <input type="checkbox" id="switch" onchange="toggle()" />
             <label for="switch">Toggle</label>
             <h3 class="on-select-light">Yearly</h3>
           </div>
