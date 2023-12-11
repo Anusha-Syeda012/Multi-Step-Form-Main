@@ -213,6 +213,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    cursor: pointer;
 
     border: 1px solid var(--Light-gray);
     border-radius: 5px;
@@ -329,7 +330,7 @@
     background: var(--clr-Marine-blue);
   }
 
-  input:checked + label:after {
+  input:checked + label:before {
     left: calc(100% - 5px);
     transform: translateX(-100%);
   }

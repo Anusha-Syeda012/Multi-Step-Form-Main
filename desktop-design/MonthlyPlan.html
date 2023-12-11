@@ -13,37 +13,154 @@
     />
     <title>Frontend Mentor | Multi-step form</title>
     <script>
+      let plan = 0;
+      let planName = "";
+      const value = "yearly";
+
       function toggle() {
+        arcade();
+        advance();
+        pro();
+      }
+      window.onload = function () {
+        plan = 9;
+        planName = "Arcade";
+        localStorage.setItem("plan", plan);
+        localStorage.setItem("planName", planName);
+      };
+      function arcade() {
+        const getMonth = document.getElementById("on-select");
+        const getYearly = document.getElementById("yearly");
         const toggleSwitch = document.getElementById("switch");
+        const getYear = document.getElementById("yr1");
+        const getTemp = document.getElementById("temp1");
+        // const value = "yearly";
 
         if (toggleSwitch.checked) {
-          window.location.href = "./YearlyPlan.html";
+          getTemp.textContent = "2 months free";
+          getMonth.classList.add("on-select-light");
+          getYearly.classList.add("on-select-dark");
+          getYear.textContent = "$10/yr";
+          localStorage.setItem("yearly", value);
+          localStorage.removeItem("plan");
+        } else {
+          getYear.textContent = "$9/mo";
+          getTemp.textContent = "";
+          getMonth.classList.remove("on-select-light");
+          getYearly.classList.remove("on-select-dark");
+          localStorage.removeItem("yearly");
+
+          // localStorage.clear();
         }
       }
+      function advance() {
+        // const value = "yearly";
 
+        const toggleSwitch = document.getElementById("switch");
+        const getYear = document.getElementById("yr2");
+        const getTemp = document.getElementById("temp2");
+        if (toggleSwitch.checked) {
+          getYear.textContent = "$120/yr";
+          getTemp.textContent = "2 months free";
+          localStorage.setItem("yearly", value);
+        } else {
+          getYear.textContent = "$12/mo";
+          getTemp.textContent = "";
+          localStorage.removeItem("yearly");
+
+          // localStorage.clear();
+        }
+      }
+      function pro() {
+        // const value = "yearly";
+        const toggleSwitch = document.getElementById("switch");
+        const getYear = document.getElementById("yr3");
+        const getTemp = document.getElementById("temp3");
+        if (toggleSwitch.checked) {
+          getYear.textContent = "$150/yr";
+          getTemp.textContent = "2 months free";
+          localStorage.setItem("yearly", value);
+        } else {
+          getYear.textContent = "$15/mo";
+          getTemp.textContent = "";
+          localStorage.removeItem("yearly");
+          localStorage.clear();
+        }
+      }
       function handleClick(id) {
         let btn = document.getElementById(id);
         let text = btn.getAttribute("id");
-        console.log(text);
-        if (text == "btn2") {
-          if (btn.classList.contains("selected-option")) {
-            btn.classList.remove("selected-option"); // Remove the class if it's already present
+        let defaultBtn = document.getElementById("btn1");
+        let defbtn2 = document.getElementById("btn2");
+        let defbtn3 = document.getElementById("btn3");
+
+        if (localStorage.getItem("yearly") !== "yearly") {
+          if (text === "btn2") {
+            localStorage.clear();
+            plan = 12;
+            planName = "Advanced";
+            localStorage.setItem("plan", plan);
+            localStorage.setItem("planName", planName);
+            btn.classList.add("selected-option");
+            defaultBtn.classList.remove("selected-option");
+            defbtn3.classList.remove("selected-option");
+          } else if (text === "btn3") {
+            localStorage.clear();
+            plan = 15;
+            planName = "Pro";
+            localStorage.setItem("plan", plan);
+            localStorage.setItem("planName", planName);
+            btn.classList.add("selected-option");
+            defaultBtn.classList.remove("selected-option");
+            defbtn2.classList.remove("selected-option");
           } else {
-            btn.classList.add("selected-option"); // Add the class if it's not present
-          }
-        } else if (text == "btn3") {
-          if (btn.classList.contains("selected-option")) {
-            btn.classList.remove("selected-option"); // Remove the class if it's already present
-          } else {
-            btn.classList.add("selected-option"); // Add the class if it's not present
+            // localStorage.removeItem("plan");
+            localStorage.clear();
+            plan = 9;
+            planName = "Arcade";
+            localStorage.setItem("plan", plan);
+            localStorage.setItem("planName", planName);
+            btn.classList.add("selected-option");
+            defbtn3.classList.remove("selected-option");
+            defbtn2.classList.remove("selected-option");
           }
         } else {
-          if (btn.classList.contains("selected-option")) {
-            btn.classList.remove("selected-option"); // Remove the class if it's already present
+          if (text === "btn2") {
+            localStorage.clear();
+            localStorage.setItem("yearly", value);
+            plan = 120;
+            planName = "Advanced";
+            localStorage.setItem("plan", plan);
+            localStorage.setItem("planName", planName);
+            btn.classList.add("selected-option");
+            defaultBtn.classList.remove("selected-option");
+            defbtn3.classList.remove("selected-option");
+          } else if (text === "btn3") {
+            localStorage.clear();
+            localStorage.setItem("yearly", value);
+            plan = 150;
+            planName = "Pro";
+
+            localStorage.setItem("plan", plan);
+            localStorage.setItem("planName", planName);
+            btn.classList.add("selected-option");
+            defaultBtn.classList.remove("selected-option");
+            defbtn2.classList.remove("selected-option");
           } else {
-            btn.classList.add("selected-option"); // Add the class if it's not present
+            // localStorage.removeItem("plan");
+            localStorage.clear();
+            localStorage.setItem("yearly", value);
+            plan = 10;
+            planName = "Arcade";
+            localStorage.setItem("plan", plan);
+            localStorage.setItem("planName", planName);
+            btn.classList.add("selected-option");
+            defbtn3.classList.remove("selected-option");
+            defbtn2.classList.remove("selected-option");
           }
         }
+
+        console.log(text);
       }
     </script>
   </head>
@@ -53,7 +170,7 @@
       <div class="sub-container bg-img">
         <div>
           <div class="row">
-            <h2 class="for-firstChild">1</h2>
+            <h2 class="for-firstChild highlited">1</h2>
             <div class="sub-col">
               <h6 class="resize">step 1</h6>
               <p>your info</p>
@@ -101,8 +218,9 @@
               <img src="../assets/images/icon-arcade.svg" alt="Arcade" />
 
               <div>
-                Arcade
-                <span>$9/mo</span>
+                <span class="level">Arcade</span>
+                <span id="yr1">$9/mo</span>
+                <span class="trial" id="temp1"></span>
               </div>
             </button>
 
@@ -115,8 +233,9 @@
               <img src="../assets/images/icon-advanced.svg" alt="Arcade" />
 
               <div>
-                Advanced
-                <span>$12/mo</span>
+                <span class="level">Advanced</span>
+                <span id="yr2">$12/mo</span>
+                <span class="trial" id="temp2"></span>
               </div>
             </button>
 
@@ -133,17 +252,18 @@
               />
 
               <div>
-                Pro
-                <span>$15/mo</span>
+                <span class="level">Pro</span>
+                <span id="yr3">$15/mo</span>
+                <span class="trial" id="temp3"></span>
               </div>
             </button>
           </div>
 
           <div class="check-opt">
-            <h3>Monthly</h3>
+            <h3 id="on-select">Monthly</h3>
             <input type="checkbox" id="switch" onchange="toggle()" />
             <label for="switch">Toggle</label>
-            <h3 class="on-select-light">Yearly</h3>
+            <h3 class="on-select-light" id="yearly">Yearly</h3>
           </div>
         </div>
 

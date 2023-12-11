@@ -12,6 +12,121 @@
       href="../assets/images/favicon-32x32.png"
     />
     <title>Frontend Mentor | Multi-step form</title>
+    <script>
+      let final = 0;
+      window.onload = function () {
+        setPlan();
+      };
+      let total = 0;
+      function setPlan() {
+        let plan = localStorage.getItem("plan");
+        let planName = localStorage.getItem("planName");
+        let subs = document.getElementById("sub1");
+        let txt = document.getElementById("serv");
+
+        let os;
+        let ls;
+        let cp;
+
+        if (plan == 9 || plan == 12 || plan == 15) {
+          txt.textContent = planName + "(Monthly) ";
+          subs.textContent = "+$" + plan + "/mo";
+          final = getTotal(plan);
+          console.log(final);
+          servicesForMonth();
+        } else {
+          txt.textContent = planName + "(Yearly) ";
+          subs.textContent = "+$" + plan + "/yr";
+          final = getTotal(plan);
+          console.log(final);
+          servicesForYear();
+        }
+      }
+
+      function servicesForMonth() {
+        let ch1 = document.getElementById("os1");
+        let ch2 = document.getElementById("ls1");
+        let ch3 = document.getElementById("cp1");
+        let reslt = document.getElementById("totlChrges");
+        let Total = document.getElementById("totl");
+
+        let charges1 = document.getElementById("chg1");
+        let charges2 = document.getElementById("chg2");
+        let charges3 = document.getElementById("chg3");
+
+        const keys = Object.keys(localStorage);
+        for (let key of keys) {
+          if (key == "os") {
+            ch1.textContent = "Online Services";
+            let n1 = parseInt(localStorage.getItem(key));
+            charges1.textContent = "+$" + localStorage.getItem(key) + "/mo";
+            final = getTotal(n1);
+          }
+          if (key == "ls") {
+            ch2.textContent = "Larger Storage";
+            let n1 = parseInt(localStorage.getItem(key));
+            charges2.textContent = "+$" + localStorage.getItem(key) + "/mo";
+            final = getTotal(n1);
+          }
+          if (key == "cp") {
+            ch3.textContent = "Custome Profile";
+            let n1 = parseInt(localStorage.getItem(key));
+            charges3.textContent = "+$" + localStorage.getItem(key) + "/mo";
+            final = getTotal(n1);
+          }
+        }
+        Total.textContent = "Total (per month)";
+
+        reslt.textContent = "+$" + final + "/mo";
+      }
+
+      function servicesForYear() {
+        let ch1 = document.getElementById("os1");
+        let ch2 = document.getElementById("ls1");
+        let ch3 = document.getElementById("cp1");
+        let reslt = document.getElementById("totlChrges");
+        let Total = document.getElementById("totl");
+
+        let charges1 = document.getElementById("chg1");
+        let charges2 = document.getElementById("chg2");
+        let charges3 = document.getElementById("chg3");
+
+        const keys = Object.keys(localStorage);
+        for (let key of keys) {
+          if (key == "os") {
+            ch1.textContent = "Online Services";
+            let n1 = parseInt(localStorage.getItem(key));
+            charges1.textContent = "+$" + localStorage.getItem(key) + "/yr";
+            final = getTotal(n1);
+          }
+          if (key == "ls") {
+            ch2.textContent = "Larger Storage";
+            let n1 = parseInt(localStorage.getItem(key));
+            charges2.textContent = "+$" + localStorage.getItem(key) + "/yr";
+            final = getTotal(n1);
+          }
+          if (key == "cp") {
+            ch3.textContent = "Custome Profile";
+            let n1 = parseInt(localStorage.getItem(key));
+            charges3.textContent = "+$" + localStorage.getItem(key) + "/yr";
+            final = getTotal(n1);
+          }
+        }
+        Total.textContent = "Total (per year)";
+        reslt.textContent = "+$" + final + "/yr";
+      }
+
+      function getTotal(val) {
+        total = parseInt(total + val);
+        return total;
+      }
+      function toBack() {
+        window.location.href = "./MonthlyPlan.html";
+      }
+      function clearAll() {
+        localStorage.clear();
+      }
+    </script>
   </head>
   <body>
     <!-- For Personal Info -->
@@ -19,7 +134,7 @@
       <div class="sub-container bg-img">
         <div>
           <div class="row">
-            <h2 class="for-firstChild">1</h2>
+            <h2 class="for-firstChild highlited">1</h2>
             <div class="sub-col">
               <h6 class="resize">step 1</h6>
               <p>your info</p>
@@ -27,7 +142,7 @@
           </div>
 
           <div class="row">
-            <h2>2</h2>
+            <h2 class="highlited">2</h2>
             <div class="sub-col">
               <h6>step 2</h6>
               <p>select plan</p>
@@ -35,7 +150,7 @@
           </div>
 
           <div class="row">
-            <h2>3</h2>
+            <h2 class="highlited">3</h2>
             <div class="sub-col">
               <h6>step 3</h6>
               <p>Add-ons</p>
@@ -63,25 +178,32 @@
           <div class="receipt card-container">
             <div class="inner-list">
               <div class="service-name">
-                <h5>Arcade (Monthly)</h5>
-                <p class="chng">Change</p>
+                <h5 id="serv"></h5>
+                <p class="chng" onclick="toBack()" onchange="clearAll()">
+                  Change
+                </p>
               </div>
-              <h5>$9/mo</h5>
+              <h5 id="sub1"></h5>
             </div>
             <hr class="style" />
 
             <div class="chrge-style">
-              <p class="custome-style">Online service</p>
-              <p class="custome-style service-chrges">+$1/mo</p>
+              <p class="custome-style" id="os1"></p>
+              <p class="custome-style service-chrges" id="chg1"></p>
             </div>
 
             <div class="chrge-style">
-              <p class="custome-style">Larger storage</p>
-              <p class="custome-style service-chrges">+$2/mo</p>
+              <p class="custome-style" id="ls1"></p>
+              <p class="custome-style service-chrges" id="chg2"></p>
+            </div>
+
+            <div class="chrge-style">
+              <p class="custome-style" id="cp1"></p>
+              <p class="custome-style service-chrges" id="chg3"></p>
             </div>
             <div class="chrge-style mrgn">
-              <p class="custome-style">Total (per month)</p>
-              <p class="custome-style service-chrges2">+$12/mo</p>
+              <p class="custome-style" id="totl"></p>
+              <p class="custome-style service-chrges2" id="totlChrges"></p>
             </div>
           </div>
           <footer class="display-down">
@@ -90,7 +212,12 @@
             </a>
 
             <a href="./thanks.html">
-              <input type="button" value="Confirm" class="btn-next" />
+              <input
+                type="button"
+                value="Confirm"
+                class="btn-next"
+                onclick="clearAll()"
+              />
             </a>
           </footer>
         </div>

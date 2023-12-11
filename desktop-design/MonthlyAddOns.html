@@ -12,6 +12,151 @@
       href="../assets/images/favicon-32x32.png"
     />
     <title>Frontend Mentor | Multi-step form</title>
+    <script>
+      let os = 0;
+      let ls = 0;
+      let cp = 0;
+      let addOn1 = "os";
+      let addOn2 = "ls";
+      let addOn3 = "cp";
+
+      let year = "";
+      function onBack() {
+        localStorage.clear();
+      }
+      window.onload = function () {
+        year = localStorage.getItem("yearly");
+        const yr1 = document.getElementById("yr1");
+        const yr2 = document.getElementById("yr2");
+        const yr3 = document.getElementById("yr3");
+
+        os = 1;
+        localStorage.setItem("os", os);
+        localStorage.setItem("addOn1", addOn1);
+        if (year == "yearly") {
+          yr1.textContent = "+$10/yr";
+          yr2.textContent = "+$120/yr";
+          yr3.textContent = "+$120/yr";
+
+          localStorage.removeItem(os);
+
+          os = 10;
+          localStorage.setItem("os", os);
+        }
+        // const id1 = document.getElementById("on-service");
+        // const id2 = document.getElementById("large-store");
+        // const id3 = document.getElementById("custom-profile");
+        // os = 1;
+        // localStorage.setItem("os", os);
+
+        // if (year !== null && year == "yearly") {
+        //   ls = 120;
+        //   cp = 120;
+
+        //   // localStorage.setItem("os", os);
+        //   localStorage.setItem("ls", ls);
+        //   localStorage.setItem("cp", cp);
+
+        //   if (id1.checked) {
+        //     btn1.classList.add("selected-option");
+        //     os = 10;
+        //     localStorage.setItem("os", os);
+        //   } else {
+        //     localStorage.removeItem("os");
+        //     btn1.classList.remove("selected-option");
+        //   }
+      };
+      function onlineService() {
+        const id = document.getElementById("on-service");
+        const btn1 = document.getElementById("btn1");
+
+        if (year !== null) {
+          if (id.checked) {
+            btn1.classList.add("selected-option");
+            os = 10;
+            localStorage.setItem("os", os);
+
+            localStorage.setItem("addOn1", addOn1);
+          } else {
+            localStorage.removeItem("os");
+            localStorage.removeItem("addOn1", addOn1);
+            btn1.classList.remove("selected-option");
+          }
+        } else {
+          if (id.checked) {
+            btn1.classList.add("selected-option");
+            os = 1;
+            localStorage.setItem("os", os);
+            localStorage.setItem("addOn1", addOn1);
+          } else {
+            localStorage.removeItem("os");
+            localStorage.removeItem("addOn1", addOn1);
+            btn1.classList.remove("selected-option");
+          }
+        }
+      }
+
+      function largeStore() {
+        // const year = localStorage.getItem("yearly");
+        const id = document.getElementById("large-store");
+        const btn1 = document.getElementById("btn2");
+        if (year !== null) {
+          if (id.checked) {
+            btn1.classList.add("selected-option");
+            ls = 20;
+
+            localStorage.setItem("addOn2", addOn2);
+            localStorage.setItem("ls", ls);
+          } else {
+            localStorage.removeItem("ls");
+            localStorage.removeItem("addOn2", addOn2);
+            btn1.classList.remove("selected-option");
+          }
+        } else {
+          if (id.checked) {
+            btn1.classList.add("selected-option");
+            ls = 2;
+
+            localStorage.setItem("addOn2", addOn2);
+            localStorage.setItem("ls", ls);
+          } else {
+            localStorage.removeItem("ls");
+            localStorage.removeItem("addOn2", addOn2);
+            btn1.classList.remove("selected-option");
+          }
+        }
+      }
+      function customProfile() {
+        // const year = localStorage.getItem("yearly");
+        const id = document.getElementById("custom-profile");
+        const btn1 = document.getElementById("btn3");
+        if (year !== null) {
+          if (id.checked) {
+            btn1.classList.add("selected-option");
+            cp = 20;
+            addOnName = "cp";
+            localStorage.setItem("cp", cp);
+            localStorage.setItem("addOn3", addOn3);
+          } else {
+            localStorage.removeItem("cp");
+            localStorage.removeItem("addOn3", addOn3);
+            btn1.classList.remove("selected-option");
+          }
+        } else {
+          if (id.checked) {
+            btn1.classList.add("selected-option");
+            cp = 2;
+            addOnName = "cp";
+            localStorage.setItem("addOn3", addOn3);
+            localStorage.setItem("cp", cp);
+          } else {
+            btn1.classList.remove("selected-option");
+            localStorage.removeItem("addOn3", addOn3);
+            localStorage.removeItem("cp");
+          }
+        }
+      }
+    </script>
   </head>
   <body>
     <!-- For Personal Info -->
@@ -19,7 +164,7 @@
       <div class="sub-container bg-img">
         <div>
           <div class="row">
-            <h2 class="for-firstChild">1</h2>
+            <h2 class="for-firstChild highlited">1</h2>
             <div class="sub-col">
               <h6 class="resize">step 1</h6>
               <p>your info</p>
@@ -27,7 +172,7 @@
           </div>
 
           <div class="row">
-            <h2>2</h2>
+            <h2 class="highlited">2</h2>
             <div class="sub-col">
               <h6>step 2</h6>
               <p>select plan</p>
@@ -60,7 +205,11 @@
           <div class="options">
             <!-- Button 1 -->
 
-            <button class="selected-option btn-style">
+            <button
+              class="btn-style selected-option"
+              id="btn1"
+              onclick="onlineService()"
+            >
               <input
                 type="checkbox"
                 id="on-service"
@@ -72,26 +221,25 @@
                 <span>Access to multiplayer games</span>
               </div>
 
-              <span class="trial">+$1/mo</span>
+              <span class="trial" id="yr1">+$1/mo</span>
             </button>
 
             <!-- Button 2 -->
-            <button class="selected-option btn-style">
+            <button class="btn-style" id="btn2" onclick="largeStore()">
               <input
                 type="checkbox"
                 id="large-store"
                 class="regular-checkbox"
-                checked="checked"
               />
               <div>
                 <label for="large-store" class="level">Larger storage</label>
                 <span>Extra 1TB of cloud save</span>
               </div>
-              <span class="trial">+$2/mo</span>
+              <span class="trial" id="yr2">+$2/mo</span>
             </button>
 
             <!-- Button 3 -->
-            <button class="btn-style">
+            <button class="btn-style" id="btn3" onclick="customProfile()">
               <input
                 type="checkbox"
                 id="custom-profile"
@@ -103,14 +251,19 @@
                 >
                 <span>Custom theme on your profile</span>
               </div>
-              <span class="trial">+$2/mo</span>
+              <span class="trial" id="yr3">+$2/mo</span>
             </button>
           </div>
         </div>
 
         <footer class="grid display-down">
           <a href="./MonthlyPlan.html">
-            <input type="button" value="Go Back" class="btn-prev" />
+            <input
+              type="button"
+              value="Go Back"
+              class="btn-prev"
+              onclick="onBack()"
+            />
           </a>
           <a href="./MonthlyFinishUp.html">
             <input type="button" value="Next Step" class="btn-submit" />

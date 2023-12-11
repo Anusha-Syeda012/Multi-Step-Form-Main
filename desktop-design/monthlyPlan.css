@@ -256,14 +256,28 @@
     padding-left: 0.5rem;
     /* width: 18ch; */
   }
+  /** added newly */
+  .level {
+    color: var(--clr-Marine-blue);
+    font-weight: var(--font-wght-bold);
+  }
 
+  .trial {
+    font-size: 0.7rem;
+    width: 11.5ch;
+    color: var(--Purplish-blue);
+  }
+
+  .custom-padding1 {
+    padding-right: 1rem;
+  }
   .custom-padding2 {
     /* width: 38ch; */
-    padding-right: 3.5rem;
+    padding-right: 4.5rem;
   }
   .custom-padding3 {
     /* width: 38ch; */
-    padding-right: 6rem;
+    padding-right: 4.5rem;
   }
   /** Styling for div having class .check-opt */
   .check-opt {
@@ -278,6 +292,9 @@
   /** Positioning of all */
   .on-select-light {
     color: var(--Cool-gray);
+  }
+  .on-select-dark {
+    color: var(--clr-Marine-blue);
   }
   /** Styling For Toggle Switch */
   input[type="checkbox"] {
@@ -316,7 +333,7 @@
 
   input:checked + label:after {
     left: calc(100% - 5px);
-    transform: translateX(+100%);
+    transform: translateX(-100%);
   }
 
   /** ----STYLING FOR SECOND-PAGE (Select plan)  Ended----------- */
